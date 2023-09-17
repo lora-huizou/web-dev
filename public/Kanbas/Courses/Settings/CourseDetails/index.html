@@ -1,0 +1,113 @@
+<!-- Course Details Tab -->
+<form action="/Kanbas/Courses/Home/screen.html">
+    <div>
+        <h2>Course Details</h2>
+
+        <label for="Image">Image:</label>
+        <input type="file" name="image" id="image">
+
+        <!-- Name -->
+        <br />
+        <label for="courseName">Name:</label>
+        <input type="text" name="courseName" id="courseName" value="CS5610 Web Dev">
+
+        <!-- Course Code -->
+        <br />
+        <label for="courseCode">Course Code:</label>
+        <input type="text" name="courseCode" id="courseCode" value="CS5610">
+
+        <!-- Blueprint Course -->
+        <br />
+        <label for="blueprintCourse">Blueprint Course:</label>
+        <input type="text" name="blueprintCourse" id="blueprintCourse" value="No" disabled>
+
+        <!-- Course Template -->
+        <br />
+        <label>Course Template:</label>
+        <input type="checkbox" name="courseTemplate" id="courseTemplate"> Enable course as a Course Template
+
+        <!-- Time Zone -->
+        <br />
+        <label for="timezone">Time Zone:</label>
+        <select name="timezone" id="timezone">
+            <option value="pst">Pacific Standard Time</option>
+            <option value="est">Eastern Standard Time</option>
+        </select>
+
+        <!-- Sis ID -->
+        <br />
+        <label for="sisID">Sis ID:</label>
+        <input type="text" name="sisID" id="sisID" value="CS5610">
+
+        <!-- Term -->
+        <br />
+        <label for="term">Term:</label>
+        <input type="text" name="term" id="term" value="Fall23">
+
+        <!-- Participation -->
+        <br />
+        <label for="participation">Participation:</label>
+        <select name="participation" id="participation">
+            <option value="term">Term</option>
+            <option value="other">Other</option>
+        </select>
+        <p>Course participation is limited to term start and end dates.</p>
+        <label for="startDate">Start:</label> 
+        <input type="date" name="startDate" id="startDate"><br />
+        <label for="endDate">End:</label> 
+        <input type="date" name="endDate" id="endDate"> <br />
+        <input type="checkbox" name="restrictBeforeTerm" id="restrictBeforeTerm"> Restrict students from viewing course before term start date<br />
+        <input type="checkbox" name="restrictAfterTerm" id="restrictAfterTerm"> Restrict students from viewing course after term end date<br />
+
+        <!-- Default Due Time -->
+        <br />
+        <label for="defaultDueTime">Default Due Time:</label>
+        <select name="defaultDueTime" id="defaultDueTime"></select>
+        <p>This influences the user interface for setting due dates, it does not change the time due for any existing assignments.</p>
+        <!-- Language -->
+        <label for="language">Language:</label>
+        <select name="language" id="language">
+            <option value="nglish">English</option>
+            <option value="other">Other</option>
+        </select>
+
+        <!-- File Storage -->
+        <br />
+        <label for="fileStorage">File Storage:</label>
+        <input type="text" name="fileStorage" id="fileStorage" value="10000 megabytes" disabled>
+
+        <!-- Large Course -->
+        <br />
+        <label for="largeCourse">LargeCourse:</label>
+        <input type="checkbox" name="largeCourse" id="largeCourse"> Launch Large Course
+        
+        <!-- Grading Scheme -->
+        <br />
+        <label for="gradingScheme">Grading Scheme:</label>
+        <input type="checkbox" name="gradingScheme" id="gradingScheme"> Enable Grading Scheme
+
+        <!-- License -->
+        <br />
+        <label for="license">License:</label>
+        <select name="license" id="license">
+            <option value="private">Private</option>
+            <!-- ... other options ... -->
+        </select>
+
+        <!-- Format -->
+        <br />
+        <label for="format">Format:</label>
+        <select name="format" id="format">
+            <option value="online">Online</option>
+            <option value="campus">Campus</option>
+        </select>
+
+        <!-- Description -->
+        <br />
+        <label for="description">Description:</label>
+        <textarea colw="50" rows="5" name="description" id="description"></textarea>
+        <br />
+        <button type="submit">Update Course Details</button>
+        <button type="submit">Cancel</button>
+    </div>
+</form>
