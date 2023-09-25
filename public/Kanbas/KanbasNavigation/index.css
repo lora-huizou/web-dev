@@ -1,0 +1,19 @@
+.wd-Kanbas-navigation {
+    background-color: black;
+    list-style: none;
+    padding: 0px;
+    width: 80px;
+    
+}
+
+.wd-Kanbas-navigation li{
+    padding: 10px;
+    font-size: 1em;
+    text-align: center;
+}
+.wd-Kanbas-navigation li a{
+    color: white;
+    text-decoration: none;
+
+}
+
