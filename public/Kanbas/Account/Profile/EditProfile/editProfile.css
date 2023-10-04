@@ -1,0 +1,38 @@
+.user-icon{
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    color: lightgray; 
+    text-align: center;
+    font-size: 8em; 
+}
+
+/* .edit-button{
+  color:black;
+} */
+
+/* .header {
+    display: flex;
+    align-items: center; 
+} */
+
+/* .divider {
+  height: 1.5px; 
+  background-color: #dcd7d7;
+}
+
+.heading-icon{
+  color: red;
+}
+
+.link-col{
+  display:flex; 
+  align-items: center; 
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.tbody, td, tfoot, th, thead, tr{
+  border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+} */

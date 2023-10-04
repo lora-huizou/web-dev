@@ -1,0 +1,12 @@
+.list-group { 
+    border-radius: 0;
+    font-size: 80%;
+}
+
+.list-group .list-group-item-sec {
+    font-weight: bold;   
+}
+
+.btn {
+    font-size: 70%;
+}

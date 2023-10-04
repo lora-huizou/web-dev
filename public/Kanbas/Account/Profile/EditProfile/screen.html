@@ -1,5 +1,4 @@
-<h1>Edit Profile</h1>
-
+<!-- <h1>Edit Profile</h1>
 <form action="/Kanbas/Account/Profile/screen.html">
   <label for="fullName">Name:</label>
   <input id="fullName" type="text" value="Hui Zou" />
@@ -16,8 +15,6 @@
   
   <h3 style="margin-bottom: 0;">Biography:</h3>
   <p>student@NEU</p>
-  <!-- <textarea cols="50" rows="5" name="biography">student@NEU</textarea> -->
-  
   <h3 style="margin-bottom: 0;">Links:</h3>
   <ul>
     <li><a href="#">GitHub</a></li><br />
@@ -25,6 +22,161 @@
   </ul>
   <button>Save</button>
   <button>Cancel</button>
-</form>
+</form> -->
 
-<!-- ?fullName=Alice+Wonderland&biography=I+followed+the+white+rabbit+down+the+hole.%0D%0A -->
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css" />
+    <link rel="stylesheet" href="../../../AccountNavigation/acctNavigation.css" />
+    <link rel="stylesheet" href= "editProfile.css" />
+  </head>
+  <body>
+    <table class="table">
+      <tr>
+        <!-- leftmost Kanbas navigation -->
+        <td style="padding-left: 0px; padding-top: 0px" class="wd-kanbas-navigation">
+          <div class="wd-kanbas-navigation list-group">
+            <a href="#" 
+              class="list-group-item list-group-item-action">
+              <span class="neu-icon">N</span></a>
+          
+            <a href="/Kanbas/Account/Profile/screen.html" class="list-group-item list-group-item-action active" aria-current="true">
+              <i class="icon-active fas fa-user-circle"></i>
+              <p class="text">Account</p>
+            </a>
+        
+            <a href="/Kanbas/Dashboard/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-tachometer-alt"></i>
+              <p class="text">Dashboard</p>
+            </a>
+            <a href="/Kanbas/Courses/Home/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-book"></i>
+              <p class="text">Courses</p>
+            </a>
+            <a href="/Kanbas/Calendar/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon far fa-calendar-alt"></i>
+              <p class="text">Calendar</p>
+            </a>
+            <a href="/Kanbas/Inbox/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-envelope-open-text"></i>
+              <p class="text">Inbox</p>
+            </a>
+            <a href="/Kanbas/History/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-clock"></i>
+              <p class="text">History</p>
+            </a>
+            <a href="/Kanbas/Studio/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-network-wired"></i>
+              <p class="text">Studio</p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-chevron-circle-right"></i>
+              <p class="text">Commons</p>
+            </a>
+            <a href="/Kanbas/Help/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-question-circle"></i>
+              <p class="text">Help</p>
+            </a>
+          </div>
+        </td>
+      
+        <!-- account navigation -->
+        <td>
+          <table width="100%">
+            <tr>
+              <td>
+                <div class="header" style="display: flex; margin-left: 20px">
+                  <span><i class="heading-icon fas fa-bars"></i></span>
+                  <span style="margin-left: 20px">Hui Zou's Profile</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <hr />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="wd-account-navigation list-group">
+                  <a href="#" class="list-group-item list-group-item-action"> Notification </a>
+                  <a href="#" class="list-group-item list-group-item-action active" aria-current="true"> Profile </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Files </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Settings </a>
+                  <a href="#" class="list-group-item list-group-item-action"> ePortfolios </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Shared Content </a>
+                  <a href="#" class="list-group-item list-group-item-action"> The Hub </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Qwickly Course Tools </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Global Announcements</a>
+                </div>
+              </td>
+              
+              <!-- edit-profile page contents -->
+              <td style="vertical-align: top">
+                <i class="user-icon fas fa-user-circle"></i> <br />
+                <label for="fullName" class="form-label"> Name:</label><br />
+                <input id="fullName" type="text" value="Hui Zou" /><br /><br />
+                <label for="selectGenre" class="form-label"> Pronouns:</label><br />
+                <select id="selectGenre">
+                          <option>She/Her</option>
+                          <option>None</option>
+                </select>
+                <br /><br />
+                <label for="title" class="form-label"> Title:</label><br />
+                <input id="title" type="text" value="" /><br /><br />
+                  
+                <h3 style="margin-bottom: 0;">Contact</h3>
+                <p>No registered services, you can add some on the <a href="#">settings</a> page.</p>
+                  
+                <h3 style="margin-bottom: 0;">Biography:</h3>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+                Student in Computer Science</textarea><br />
+                  
+                <h3 style="margin-bottom: 0;">Links</h3>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col">Title</div>
+                    <div class="col">URL</div>
+                  </div>
+                </div>
+                <div class="container text-center">
+                  <div class="row">
+                    <div class="col d-flex align-items-center link-col">
+                      <input type="title" class="form-control flex-grow-1" id="title" placeholder="Youtube"/>
+                      <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="col link-col">
+                      <input type="title" class="form-control" id="url" placeholder="https://www.youtube.com"/>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="text-align: left; margin-left: -10px">
+                  <button type="button" class="btn btn-light"> Add another link </button>
+                </div>
+                <hr />
+                  <div class="float-end">
+                    <button type="button" class="btn btn-light"> Cancel </button>
+                    <button type="button" class="btn btn-danger"> Save Profile</button>
+                </div>  
+              </td>
+
+              <!-- cancel edit -->
+              <td style="vertical-align: top">
+                <button type="button" class="btn btn-light" style="margin-top: 20px">
+                  <i class="fas fa-pencil-alt"></i>
+                  <a class="edit-button link-offset-2 link-underline link-underline-opacity-0"
+                    href="/Kanbas/Account/Profile/screen.html">Cancel Editing
+                  </a>
+                </button>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

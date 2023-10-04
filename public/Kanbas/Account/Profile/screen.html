@@ -1,82 +1,124 @@
-<table width="100%">
-  <tr>
-      <!-- leftmost Kanbas navigation -->
-      <td valign="top">
-          <ul>
-              <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-              <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-              <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-              <li><a href="/Kanbas/Groups/screen.html">Groups</a></li>
-              <li><a href="/Kanbas/Calendar/screen.html">Calendar</a></li>
-              <li><a href="/Kanbas/Inbox/screen.html">Inbox</a></li>
-              <li><a href="/Kanbas/History/screen.html">History</a></li>
-              <li><a href="/Kanbas/Studio/screen.html">Studio</a></li>
-              <li><a href="/Kanbas/Help/screen.html">Help</a></li>
-          </ul>
-      </td>
-      <!-- account navigation -->
-      <td valign="top">
-          <ul>   
-            <li><a href="#">Notification</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Files</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">ePortfolios</a></li>
-            <li><a href="#">Shared Content</a></li>
-            <li><a href="#">The Hub</a></li>
-          </ul>
-      </td>
-      <!-- course home page contents -->
-      <td valign="top">
-        <table style="width: 100%;">
-          <tbody>
-              <tr>
-                  <!-- Profile Information on the Left -->
-                  <td style="width: 80%; vertical-align: top;">
-                      <table>
-                          <tr>
-                          <td colspan="2"><h3>Profile</h3></td>
-                          </tr>
-                          <tr>
-                            <td colspan="2"><h3>Hui Zou</h3></td>
-                          </tr>
-                          <tr>
-                            <td colspan="2"><h3 style="margin-bottom: 0;">Contact</h3></td>
-                          </tr>
-                          <tr>
-                            <td>No registered services, you can add some on the <a href="#">settings</a> page.</td>
-                          </tr>
-                          <tr>
-                              <td colspan="2"><h3 style="margin-bottom: 0;">Biography:</h3></td>
-                          </tr>
-                          <tr>
-                              <td colspan="2">
-                                Student@NEU
-                              </td>
-                          </tr>
-                          <tr>
-                              <td colspan="2"><h3 style="margin-bottom: 0;">Links</h3></td>
-                          </tr>
-                          <tr>
-                              <td colspan="2">
-                                <ul>
-                                  <li><a href="#">GitHub</a></li><br />
-                                  <li><a href="#">LinkedIn</a></li><br />
-                                </ul>
-                              </td>
-                          </tr>
-                      </table>
-                  </td>
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css" />
+    <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../AccountNavigation/acctNavigation.css" />
+    <link rel="stylesheet" href="./EditProfile/editProfile.css" />
+  </head>
+  <body>
+    <table class="table">
+      <tr>
+        <!-- leftmost Kanbas navigation -->
+        <td style="padding-left: 0px; padding-top: 0px" class="wd-kanbas-navigation">
+          <div class="wd-kanbas-navigation list-group">
+            <a href="#" 
+              class="list-group-item list-group-item-action">
+              <span class="neu-icon">N</span></a>
+          
+            <a href="/Kanbas/Account/Profile/screen.html" class="list-group-item list-group-item-action active" aria-current="true">
+              <i class="icon-active fas fa-user-circle"></i>
+              <p class="text">Account</p>
+            </a>
+        
+            <a href="/Kanbas/Dashboard/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-tachometer-alt"></i>
+              <p class="text">Dashboard</p>
+            </a>
+            <a href="/Kanbas/Courses/Home/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-book"></i>
+              <p class="text">Courses</p>
+            </a>
+            <a href="/Kanbas/Calendar/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon far fa-calendar-alt"></i>
+              <p class="text">Calendar</p>
+            </a>
+            <a href="/Kanbas/Inbox/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-envelope-open-text"></i>
+              <p class="text">Inbox</p>
+            </a>
+            <a href="/Kanbas/History/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-clock"></i>
+              <p class="text">History</p>
+            </a>
+            <a href="/Kanbas/Studio/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-network-wired"></i>
+              <p class="text">Studio</p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-chevron-circle-right"></i>
+              <p class="text">Commons</p>
+            </a>
+            <a href="/Kanbas/Help/screen.html" class="list-group-item list-group-item-action">
+              <i class="icon fas fa-question-circle"></i>
+              <p class="text">Help</p>
+            </a>
+          </div>
+        </td>
+      
+        <!-- account navigation -->
+        <td>
+          <table width="100%">
+            <tr>
+              <td>
+                <div class="header" style="display: flex; margin-left: 20px">
+                  <span><i class="heading-icon fas fa-bars"></i></span>
+                  <span style="margin-left: 20px">Hui Zou's Profile</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <hr />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="wd-account-navigation list-group">
+                  <a href="#" class="list-group-item list-group-item-action"> Notification </a>
+                  <a href="#" class="list-group-item list-group-item-action active" aria-current="true"> Profile </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Files </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Settings </a>
+                  <a href="#" class="list-group-item list-group-item-action"> ePortfolios </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Shared Content </a>
+                  <a href="#" class="list-group-item list-group-item-action"> The Hub </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Qwickly Course Tools </a>
+                  <a href="#" class="list-group-item list-group-item-action"> Global Announcements</a>
+                </div>
+              </td>
+              
+              <!-- profile page contents -->
+              <td style="vertical-align: top">
+                <i class="user-icon fas fa-user-circle"></i>
+                <h1>Hui Zou</h1>
+                <br /><br />
+                <h3>Contact</h3>
+                <p>
+                  No registered services, you can add some on the settings page.
+                </p>
+                <h3>Biography</h3>
+                <p>Computer Science Student</p>
+                <h3>Links</h3>
+                <i class="fas fa-link" style="margin-right: 10px"></i>
+                <a href="https://www.youtube.com/watch?v=_Hq9n7cc8rk">YouTube</a>
+                <br />  
+              </td>
 
-                  <!-- Edit Profile Button on the Right -->
-                  <td style="width: 20%; vertical-align: top;">
-                      <form action="/Kanbas/Account/Profile/EditProfile/screen.html">
-                          <button>Edit Profile</button>
-                      </form>
-                  </td>
-              </tr>
-          </tbody>
-        </table>   
-      </td>
-  </tr>
-</table>
+              <!-- Edit Profile Button on the Right -->
+              <td style="width: 20%; vertical-align: top;">
+                <form action="/Kanbas/Account/Profile/EditProfile/screen.html">
+                  <button class="btn btn-light" style="margin-top: 20px">
+                    <i class="fas fa-pencil-alt"></i>
+                      Edit Profile
+                  </button>
+                </form>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
