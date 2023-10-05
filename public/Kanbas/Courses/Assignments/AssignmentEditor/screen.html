@@ -117,7 +117,7 @@
                                 </ul>
                             </div>
                         </td>
-                    <!-- Assignment Details -->
+                    <!-- Assignment -->
                     <td style="vertical-align: top; width: 80%">
                       <div class="d-flex justify-content-end align-items-center">
                         <i class="fas fa-check-circle text-success me-2"></i>
@@ -127,7 +127,7 @@
                         </button>
                       </div>
                       <br />
-                      <!-- Assignment list -->
+                      <!-- Assignment Details -->
                       <ul class="list-group" style="margin-left: 10px">
                         <div class="d-flex flex-column text-start">
                           <label for="assignment-name" class="form-label text-muted fs-6 mb-2">Assignment Name</label>
@@ -135,20 +135,24 @@
                           <textarea class="form-control text-muted mb-2" id="example-textarea1" rows="4">This assignment describes how to install the development environment for creating and working with Web.
                           </textarea>
                         </div>
+                        <!-- Points -->            
                         <div class="mb-3">
-                          <label class="form-label">Points</label>
-                          <div>
-                              <input type="text" class="form-control" placeholder="100">
+                            <label class="form-label">Points</label>
+                            <div>
+                                <input type="text" class="form-control" placeholder="100">
+                            </div>
                           </div>
-                        </div>
+                        <!-- Assignment Group -->
                         <div class="mb-3">
-                          <label class="form-label">Assignment Group</label>
-                          <div>
-                              <select class="form-select">
-                                  <option>Assignments</option>
-                              </select>
-                          </div>
+                            <label class="form-label">Assignment Group</label>
+                            <div>
+                                <select class="form-select">
+                                    <option>Assignments</option>
+                                </select>
+                            </div>
                         </div>
+                        
+                        <!-- Display Grade as -->
                         <div class="mb-3">
                           <label for="displayGradeAs" class="form-label">Display Grade as</label>
                           <select id="displayGradeAs" class="form-select">
@@ -191,6 +195,31 @@
                             </div>
                         </div>
                     </div>
+                    <!-- assign -->
+                    <div class="mb-3">
+                        <label class="form-label align-text-top">Assign</label>
+                        <div class="border p-3">
+                            <div class="mb-2">
+                                <label class="form-label fw-bold">Assign to</label>
+                                <input type="text" class="form-control" placeholder="Everyone">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label fw-bold">Due</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label fw-bold">Available from</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label class="form-label fw-bold">Until</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mt-3">+ Add</button>
+                    </div>
                     
                     <div class="mb-4">
                       <hr class="my-5" />
@@ -203,14 +232,7 @@
                           <button type="submit" class="btn btn-primary">Save</button>
                       </div>
                   </div>
-                      
-                      
-                      
-                      
-                      
-
-                            
-                      </ul>
+       
 
                     </td>
                 </table>
