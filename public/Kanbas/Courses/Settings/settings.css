@@ -1,0 +1,42 @@
+.header {
+    padding: 15px 20px;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 5px;
+    align-items: center;
+    font-size: small;
+}
+
+.details-title{
+    font-weight: bold;
+    font-family: "Helvetica";
+}
+
+.details-participation {
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.details-dropdown {
+    width: 350px;
+    padding: 5px 5px;
+    font-family: "Helvetica";
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+}
+.details-participation-elements{
+    display: flex;
+    flex-direction: column;
+}
+
+.details-participation-date {
+    width: 350px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    margin: 5px 0px;
+
+}

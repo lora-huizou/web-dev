@@ -1,167 +1,215 @@
-<table width="100%">
-    <tr>
-        <!-- leftmost Kanbas navigation -->
-        <td valign="top">
-            <ul>
-                <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-                <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-                <li><a href="/Kanbas/Courses/Home/screen.html">Courses</a></li>
-                <li><a href="/Kanbas/Groups/screen.html">Groups</a></li>
-                <li><a href="/Kanbas/Calendar/screen.html">Calendar</a></li>
-                <li><a href="/Kanbas/Inbox/screen.html">Inbox</a></li>
-                <li><a href="/Kanbas/History/screen.html">History</a></li>
-                <li><a href="/Kanbas/Studio/screen.html">Studio</a></li>
-                <li><a href="/Kanbas/Help/screen.html">Help</a></li>
-            </ul>
-        </td>
-        <!-- course navigation -->
-        <td valign="top">
-            <ul>   
-                <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
-                <li><a href="/Kanbas/Courses/Home/screen.html">Modules</a></li>
-                <li><a href="/Kanbas/Courses/Piazza/screen.html">Piazza</a></li>
-                <li><a href="/Kanbas/Courses/ZoomMeetings/screen.html">Zoom Meetings</a></li>
-                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
-                <li><a href="/Kanbas/Courses/Quizes/screen.html">Quizes</a></li>
-                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-                <li><a href="/Kanbas/Courses/People/screen.html">People</a></li>
-                <li><a href="/Kanbas/Courses/PanoptoVideo/screen.html">Panopto Video</a></li>
-                <li><a href="/Kanbas/Courses/Discussion/screen.html">Discussion</a></li>
-                <li><a href="/Kanbas/Courses/Announcement/screen.html">Announcement</a></li>
-                <li><a href="/Kanbas/Courses/Pages/screen.html">Pages</a></li>
-                <li><a href="/Kanbas/Courses/Files/screen.html">Files</a></li>
-                <li><a href="/Kanbas/Courses/Rubrics/screen.html">Rubrics</a></li>
-                <li><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
-            </ul>
-        </td>
-        <!-- setting page - course details contents -->
-        <td valign="top">
-            <table border="1" width="100%">
-                <tbody>
-                <tr>
-                    <th><a href="/Kanbas/Courses/Settings/screen.html">Course Details</a></th>
-                    <th><a href="#">Sections</a></th>
-                    <th><a href="/Kanbas/Courses/Settings/CourseDetailNav/Screen.html">Navigation</a></th>
-                    <th><a href="#">Apps</a></th>
-                    <th><a href="#">Feature Options</a></th>
-                    <th><a href="#">Integrations</a></th>
-                </tr>
-                </tbody>
-            </table>
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css" />
+        <link rel="stylesheet" href="/Kanbas/KanbasNavigation/index.css" />
+        <link rel="stylesheet" href="/Kanbas/Courses/CourseNavigation/index.css" />
+        <link rel="stylesheet" href="/lib/font-awesome/css/all.css" />
+        <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="settings.css" />
+    </head>
+    <body>
+        <table class="table">
+            <tbody>
+            <tr>
+                <!-- Kanbas navigation -->
+                <td style="padding-left: 0px; padding-top: 0px" 
+                    class="d-none d-sm-block wd-kanbas-navigation">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">
+                        <span class="neu-icon">N</span></a>
+                
+                        <a href="/Kanbas/Account/Profile/screen.html" class="list-group-item list-group-item-action">
+                            <i class="icon-active fas fa-user-circle"></i>
+                            <p class="text">Account</p>
+                        </a>
+                
+                        <a href="/Kanbas/Dashboard/screen.html" class="list-group-item list-group-item-action">
+                            <i class="icon fas fa-tachometer-alt"></i>
+                            <p class="text">Dashboard</p>
+                        </a>
+                        <a href="/Kanbas/Courses/Home/screen.html" class="list-group-item list-group-item-action active">
+                            <i class="icon fas fa-book"></i>
+                            <p class="text">Courses</p>
+                        </a>
+                        <a href="/Kanbas/Calendar/screen.html" class="list-group-item list-group-item-action">
+                            <i class="icon far fa-calendar-alt"></i>
+                            <p class="text">Calendar</p>
+                        </a>
+                        <a href="/Kanbas/Inbox/screen.html" class="list-group-item list-group-item-action">
+                            <i class="icon fas fa-envelope-open-text"></i>
+                            <p class="text">Inbox</p>
+                        </a>
+                        <a href="/Kanbas/History/screen.html" class="list-group-item list-group-item-action">
+                            <i class="icon fas fa-clock"></i>
+                            <p class="text">History</p>
+                        </a>
+                        <a href="/Kanbas/Studio/screen.html" class="list-group-item list-group-item-action">
+                            <i class="icon fas fa-network-wired"></i>
+                            <p class="text">Studio</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="icon fas fa-chevron-circle-right"></i>
+                            <p class="text">Commons</p>
+                        </a>
+                        <a href="/Kanbas/Help/screen.html" class="list-group-item list-group-item-action">
+                            <i class="icon fas fa-question-circle"></i>
+                            <p class="text">Help</p>
+                        </a>      
+                    </div>
+                </td>
+                <!-- Courses navigation -->
+                <td>
+                    <table>
+                    <tr>
+                        <div class="d-none d-sm-block">
+                        <nav class="navbar d-flex justify-content-between">
+                            <nav
+                            style="--bs-breadcrumb-divider: '>'"
+                            aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li>
+                                <i class="heading-icon fas fa-bars"
+                                    style="margin-left: 8px;
+                                        margin-right: 8px;
+                                        color: red;"></i>
+                                </li>
+                                <li class="breadcrumb-item">
+                                <a href="#" style="color: red; text-decoration: none">CS5610.0000.0000</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Settings</li>
+                            </ol>
+                            </nav>
+                        </nav>
+                        <hr style="margin-top: -5px" />
+                        </div>
+                    </tr>
+                    <tr>
+                        <td class="d-none d-sm-table-row">
+                            <div>
+                                <ul class="wd-course-navigation d-none d-md-block">
+                                    <p class="text-muted ms-4" style="font-size: 0.7rem; font-style: italic;">
+                                        202310_2 Fall 2022 Semest...
+                                    </p>   
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Piazza</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Zoom Meetings</a></li>
+                                <li><a href="/Kanbas/Courses/Modules/index.html">Modules</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Quizes</a></li> 
+                                <li><a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Quizes</a></li>
+                                <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">People</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Panopto Video</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Discussion</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Announcement</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Pages</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Files</a></li>
+                                <li><a href="/Kanbas/Courses/Home/screen.html">Rubrics</a></li>
+                                <li class="wd-active"><a href="/Kanbas/Courses/Settings/screen.html">Settings</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    <!-- Courses Details -->
+                    <td style="vertical-align: top; width: 80%">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                            <a class="nav-link active" href="/Kanbas/Courses/Settings/CourseDetails/screen.html">Course Details</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Sections</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="/Kanbas/Courses/Settings/CourseDetailNav/screen.html">Navigation</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Apps</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Feature Options</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Integrations</a>
+                            </li>
+                        </ul>
+                        <h2 class="header">Course Details</h2>
 
-            <!-- Course Details Tab -->
-            <form action="/Kanbas/Courses/Home/screen.html">
-                <div>
-                    <h2>Course Details</h2>
+                        <div class="details">
+                            <label for="Image" class="details-title">Image:</label>
+                            <img width="400px" height="200px"/>
+                        </div>
 
-                    <label for="Image">Image:</label>
-                    <input type="file" name="image" id="image">
+                        <!-- Name -->
+                        <div class="details">
+                            <label for="courseName" class="details-title">Name:</label>
+                            <input type="text" name="courseName" id="courseName" value="CS5610 Web Dev">
+                        </div>
 
-                    <!-- Name -->
-                    <br />
-                    <label for="courseName">Name:</label>
-                    <input type="text" name="courseName" id="courseName" value="CS5610 Web Dev">
+                        <!-- Course Code -->
+                        <div class="details">
+                            <label for="courseCode" class="details-title">Course Code:</label>
+                            <input type="text" name="courseCode" id="courseCode" value="CS5610">
+                        </div>
+                        <!-- Blueprint Course -->
+                        <div class="details">
+                            <label for="blueprintCourse" class="details-title">Blueprint Course:</label>
+                            <input type="text" name="blueprintCourse" id="blueprintCourse" value="No" disabled>
+                        </div>
+                        <!-- Course Template -->
+                        <div class="details">
+                            <label class="details-title">Course Template:</label>
+                            <input type="checkbox" name="courseTemplate" id="courseTemplate"> Enable course as a Course Template
+                        </div>
+                        <!-- Time Zone -->
+                        <div class="details">
+                            <label for="timezone" class="details-title">Time Zone:</label>
+                            <select name="timezone" id="timezone">
+                                <option value="pst">Pacific Standard Time</option>
+                                <option value="est">Eastern Standard Time</option>
+                            </select>
+                        </div>
+                        <!-- Sis ID -->
+                        <div class="details">
+                            <label for="sisID" class="details-title">Sis ID:</label>
+                            <input type="text" name="sisID" id="sisID" value="CS5610">
+                        </div>
+                        <!-- Term -->
+                        <div class="details">
+                            <label for="term" class="details-title">Term:</label>
+                            <input type="text" name="term" id="term" value="Fall23">
+                        </div>
+                        <!-- Participation -->
+                        
+                        <div class="details-participation">
+                            <label class="details-title">Participation: </label>
+                            <div class="details-participation-elements">
+                                <div class="details-participation">
+                                    <select class="details-dropdown">
+                                        <option>Term</option>
+                                    </select>
+                                </div>
+                                <span class="details-participation">Course participation is limited to <b>term</b> start and end dates</span>
+                                <label class="details-participation">Start</label>
+                                <input class="details-participation details-participation-date" type="date"/>
+                                <label class="details-participation">End</label>
+                                <input class="details-participation details-participation-date" type="date"/>
+                                <div class="details-participation">
+                                    <input type="checkbox" />
+                                    <span>Restrict Students from viewing course before term start date</span>
+                                </div>
+                                <div class="details-participation">
+                                    <input type="checkbox" />
+                                    <span>Restrict Students from viewing course after term end date</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
 
-                    <!-- Course Code -->
-                    <br />
-                    <label for="courseCode">Course Code:</label>
-                    <input type="text" name="courseCode" id="courseCode" value="CS5610">
 
-                    <!-- Blueprint Course -->
-                    <br />
-                    <label for="blueprintCourse">Blueprint Course:</label>
-                    <input type="text" name="blueprintCourse" id="blueprintCourse" value="No" disabled>
 
-                    <!-- Course Template -->
-                    <br />
-                    <label>Course Template:</label>
-                    <input type="checkbox" name="courseTemplate" id="courseTemplate"> Enable course as a Course Template
-
-                    <!-- Time Zone -->
-                    <br />
-                    <label for="timezone">Time Zone:</label>
-                    <select name="timezone" id="timezone">
-                        <option value="pst">Pacific Standard Time</option>
-                        <option value="est">Eastern Standard Time</option>
-                    </select>
-
-                    <!-- Sis ID -->
-                    <br />
-                    <label for="sisID">Sis ID:</label>
-                    <input type="text" name="sisID" id="sisID" value="CS5610">
-
-                    <!-- Term -->
-                    <br />
-                    <label for="term">Term:</label>
-                    <input type="text" name="term" id="term" value="Fall23">
-
-                    <!-- Participation -->
-                    <br />
-                    <label for="participation">Participation:</label>
-                    <select name="participation" id="participation">
-                        <option value="term">Term</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <p>Course participation is limited to term start and end dates.</p>
-                    <label for="startDate">Start:</label> 
-                    <input type="date" name="startDate" id="startDate"><br />
-                    <label for="endDate">End:</label> 
-                    <input type="date" name="endDate" id="endDate"> <br />
-                    <input type="checkbox" name="restrictBeforeTerm" id="restrictBeforeTerm"> Restrict students from viewing course before term start date<br />
-                    <input type="checkbox" name="restrictAfterTerm" id="restrictAfterTerm"> Restrict students from viewing course after term end date<br />
-
-                    <!-- Default Due Time -->
-                    <br />
-                    <label for="defaultDueTime">Default Due Time:</label>
-                    <select name="defaultDueTime" id="defaultDueTime"></select>
-                    <p>This influences the user interface for setting due dates, it does not change the time due for any existing assignments.</p>
-                    <!-- Language -->
-                    <label for="language">Language:</label>
-                    <select name="language" id="language">
-                        <option value="nglish">English</option>
-                        <option value="other">Other</option>
-                    </select>
-
-                    <!-- File Storage -->
-                    <br />
-                    <label for="fileStorage">File Storage:</label>
-                    <input type="text" name="fileStorage" id="fileStorage" value="10000 megabytes" disabled>
-
-                    <!-- Large Course -->
-                    <br />
-                    <label for="largeCourse">LargeCourse:</label>
-                    <input type="checkbox" name="largeCourse" id="largeCourse"> Launch Large Course
-                    
-                    <!-- Grading Scheme -->
-                    <br />
-                    <label for="gradingScheme">Grading Scheme:</label>
-                    <input type="checkbox" name="gradingScheme" id="gradingScheme"> Enable Grading Scheme
-
-                    <!-- License -->
-                    <br />
-                    <label for="license">License:</label>
-                    <select name="license" id="license">
-                        <option value="private">Private</option>
-                        <!-- ... other options ... -->
-                    </select>
-
-                    <!-- Format -->
-                    <br />
-                    <label for="format">Format:</label>
-                    <select name="format" id="format">
-                        <option value="online">Online</option>
-                        <option value="campus">Campus</option>
-                    </select>
-
-                    <!-- Description -->
-                    <br />
-                    <label for="description">Description:</label>
-                    <textarea colw="50" rows="5" name="description" id="description"></textarea>
-                    <br />
-                    <button type="submit">Update Course Details</button>
-                    <button type="submit">Cancel</button>
-                </div>
-            </form>
-        </td>
-    </tr>
-</table>

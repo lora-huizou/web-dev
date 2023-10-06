@@ -1,0 +1,6 @@
+.drag-item {
+    cursor: grab;
+}
+.drag-item:hover {
+    background-color: #f1f1f1;
+}
