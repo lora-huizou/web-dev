@@ -2,9 +2,10 @@
   background-color: white;
   list-style: none;
   padding: 0px;
-  width: 110px;
+  width: 120px;
   margin: 0px;
   margin-left: 10px;
+  word-wrap: break-word; 
 }
 .wd-course-navigation li {
   padding-left: 10px;
