@@ -15,4 +15,4 @@ function FunctionDestructing() {
     </div>
     );
     }
-    export default FunctionDestructing;
+export default FunctionDestructing;
