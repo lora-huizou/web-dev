@@ -4,6 +4,7 @@ import { RiDashboard3Fill } from "react-icons/ri";
 import { FaBook } from "react-icons/fa";
 import { BsFillCalendar2WeekFill } from "react-icons/bs";
 import "./index.css";
+
 function KanbasNavigation() {
   const links = ["Account", "Dashboard", "Courses", "Calendar"];
 
