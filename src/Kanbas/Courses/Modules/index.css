@@ -1,0 +1,57 @@
+.web-icon-check{
+    color: green;
+}
+
+.web-icon-check-circle{
+    color: green;
+    font-size: 30px;
+    padding: 5px;
+}
+
+.web-icon-plus{
+    color: gray;
+    margin-left: 10px;
+    font-size: 30px;
+    padding: 5px;
+}
+
+.web-icon-ellipsis{
+    color: gray;
+    margin-left: 10px;
+}
+
+.module-container {
+    display: flex;  
+    justify-content: flex-end;
+    align-items:center;
+}
+
+.module-title{
+    display: inline;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn {
+    vertical-align: middle; 
+}
+
+.btn-link {
+    color: black;
+    text-decoration: none;
+}
+  
+.btn-link:hover, .btn-link:focus {
+    text-decoration: none;
+    color: green; 
+}
+
+.list-group-item {
+    font-size: 15px;
+    border: none;
+    padding: 10px 20px;
+    background-color: gainsboro; 
+    margin-bottom: 10px;
+}
+

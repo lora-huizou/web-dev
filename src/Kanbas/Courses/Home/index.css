@@ -1,0 +1,47 @@
+.left-align-icon-text-btn {
+    text-align: left;
+    /* padding-left: 15px; */
+}
+
+.to-do-title{
+    font-size: 0.9rem;
+}
+
+.web-icon-todo{
+    font-Size: 0.8rem;
+}
+
+.coming-up {
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coming-up-title {
+    font-size: 1.1rem;
+    margin: 0; 
+}
+
+
+.calendar-info {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-icon-1 {
+    color: red; 
+    font-size: 0.8rem; 
+    margin-left: 5rem; 
+}
+
+.calendar-icon-2 {
+    color: red; 
+    font-size: 0.8rem; 
+    margin-left: 0.5rem; 
+}
+.calendar-text {
+    color: red; 
+    font-size: 0.8rem;
+    margin-left: 1rem; 
+}

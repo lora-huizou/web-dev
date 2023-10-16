@@ -1,5 +1,7 @@
 .wd-kanbas-navigation .wd-icon {
-    font-size: 2em;
+    font-size: 30px;
+    margin-right: 10px;
+    color : rgba(232, 17, 17, 0.893);
   }
   
   .wd-kanbas-navigation .list-group-item:first-child,
@@ -28,18 +30,29 @@
   
   .wd-kanbas-navigation a.active {
     background-color: white;
+    color : red;
   }
-  .wd-kanbas-navigation a.active {
-    color: red;
-  }
-  
+
   .wd-kanbas-navigation a {
     color: white;
     text-decoration: none;
   }
   
-  /* .wd-kanbas-navigation a i {
-    color: red;
-    font-size: 2em;
-    margin-bottom: 5px;
-  } */
+  /* Styles for Account icon and text when not selected */
+.wd-kanbas-navigation a[href*="Account"] {
+  color: white;
+}
+
+.wd-kanbas-navigation a[href*="Account"] .wd-icon {
+  color: white;
+}
+
+/* Styles for Account icon and text when selected */
+.wd-kanbas-navigation a.active[href*="Account"] {
+  color: red;
+}
+
+.wd-kanbas-navigation a.active[href*="Account"] .wd-icon {
+  color: red;
+}
+  
