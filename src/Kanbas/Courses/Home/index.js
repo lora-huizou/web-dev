@@ -1,6 +1,6 @@
 import ModuleList from "../Modules/ModuleList";
 import { FaBan, FaCheckCircle, FaFileImport, FaCloudUploadAlt, 
-  FaCog, FaChartBar, FaBullhorn, FaBell, FaTimesCircle, FaCalendarAlt , FaCalendarCheck} from 'react-icons/fa';
+  FaCog, FaChartBar, FaBullhorn, FaBell, FaTimesCircle, FaCalendarAlt} from 'react-icons/fa';
 import './index.css';
 
 
@@ -12,49 +12,50 @@ function Home() {
             <ModuleList />
         </div>
         <div className="col-2 d-none d-md-block">
-            <h6>Course Status</h6>
+            <h6 className="title">Course Status</h6>
+            <br />
             <div className="btn-group">
-              <button className="btn btn-light btn-sm" style={{ width: '120px'}}>
+              <button className="btn btn-light btn-sm" style={{ width: '110px'}}>
                 <FaBan /> Unpublish
               </button>
-              <button className="btn btn-success btn-sm" style={{ width: '120px' }} disabled>
+              <button className="btn btn-success btn-sm" style={{ width: '110px' }} disabled>
                 <FaCheckCircle /> Published
               </button>   
             </div>
             <br />
             <br />
-            <div className="col-20">
+            <div className="col-12">
               <button type="button" 
-                      className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
+                      className="btn btn-light btn-sm w-120 left-align-icon-text-btn">
                 <FaFileImport /> Import Existing Content
               </button>
             </div>
-            <div className="col-20">
-              <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
+            <div className="col-12">
+              <button type="button" className="btn btn-light btn-sm w-120 left-align-icon-text-btn">
                 <FaCloudUploadAlt /> Import from Commons
               </button>
             </div>
-            <div className="col-20">
-              <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
+            <div className="col-12">
+              <button type="button" className="btn btn-light btn-sm w-120 left-align-icon-text-btn">
                 <FaCog /> Choose Home Page
               </button>
             </div>
-            <div className="col-20">
+            <div className="col-12">
               <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
                 <FaChartBar /> View Course Stream
               </button>
             </div>
-            <div className="col-20">
+            <div className="col-12">
               <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
                 <FaBullhorn /> New Announcement
               </button>
             </div>
-            <div className="col-20">
+            <div className="col-12">
               <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
                 <FaChartBar /> New Analytics
               </button>
             </div>
-            <div className="col-20">
+            <div className="col-12">
               <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
                 <FaBell /> View Course Notification
               </button>
@@ -76,7 +77,7 @@ function Home() {
             <br />
             <div className="coming-up">
                 <div className="header d-flex justify-content-between align-items-center">
-                  <h6 className="coming-up-title">Coming Up</h6>
+                  <h6 className="title">Coming Up</h6>
                   <div className="calendar-info d-flex align-items-center">
                       <FaCalendarAlt className="calendar-icon-1" />
                       <small className="calendar-text text-danger ms-2">View Calendar</small>

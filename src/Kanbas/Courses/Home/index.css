@@ -1,6 +1,10 @@
+.btn {
+    text-align: left !important;
+}
+
 .left-align-icon-text-btn {
     text-align: left;
-    /* padding-left: 15px; */
+    padding-left: 15px;
 }
 
 .to-do-title{
@@ -18,11 +22,10 @@
     align-items: center;
 }
 
-.coming-up-title {
-    font-size: 1.1rem;
+.title {
+    font-size: 0.9rem;
     margin: 0; 
 }
-
 
 .calendar-info {
     display: flex;
