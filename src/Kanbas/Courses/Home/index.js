@@ -26,17 +26,17 @@ function Home() {
             <br />
             <div className="col-12">
               <button type="button" 
-                      className="btn btn-light btn-sm w-120 left-align-icon-text-btn">
+                      className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
                 <FaFileImport /> Import Existing Content
               </button>
             </div>
             <div className="col-12">
-              <button type="button" className="btn btn-light btn-sm w-120 left-align-icon-text-btn">
+              <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
                 <FaCloudUploadAlt /> Import from Commons
               </button>
             </div>
             <div className="col-12">
-              <button type="button" className="btn btn-light btn-sm w-120 left-align-icon-text-btn">
+              <button type="button" className="btn btn-light btn-sm w-100 left-align-icon-text-btn">
                 <FaCog /> Choose Home Page
               </button>
             </div>

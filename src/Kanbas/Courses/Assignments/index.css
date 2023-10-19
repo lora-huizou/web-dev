@@ -1,5 +1,5 @@
 .place-holder {
-    width: 200px;
+    width: 200px !important;
 }
 
 .btn {
@@ -8,7 +8,13 @@
 
 .web-icon-ellipsis{
     color: gray;
-    margin-left: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.web-icon-ellipsis2{
+    color: gray;
+    margin-left: 0px;
 }
 
 .web-icon-plus{
