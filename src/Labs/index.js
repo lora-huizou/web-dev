@@ -1,4 +1,5 @@
 import { Route, Routes, Link, useLocation, Navigate } from "react-router-dom";
+import Nav from "../Nav";
 import Assignment3 from "./a3";
 import Assignment4 from "./a4";
 import Assignment5 from "./a5";
@@ -7,6 +8,7 @@ function Labs() {
     const { pathname } = useLocation();
     return(
         <div className="container">
+            <Nav />
             <h1>Labs</h1>
             <div className="nav nav-pills">
                 <Link
