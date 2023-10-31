@@ -55,3 +55,42 @@
     margin-bottom: 10px;
 }
 
+/* module-list */
+.add {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    gap: 10px;
+}
+  
+.list-group-item .input-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.list-group-item .module-input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.list-group-item .module-button {
+    padding: 5px 15px;
+}
+
+.list-group-item .description-textarea {
+    width: 100%;
+    height: 60px;
+}
+
+.module-item .module-header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.button-group .btn {
+    margin-left: 5px;
+}
+

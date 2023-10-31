@@ -12,11 +12,11 @@ import {FaBars} from "react-icons/fa";
 import {FaGlasses} from "react-icons/fa"; 
 import "./index.css";
 
-function Courses() {
+function Courses({courses}) {
   const { courseId } = useParams();
   const {pathname} = useLocation();
-  const [empty, kanbas, courses, id, screen] = pathname.split("/");
-  const course = db.courses.find((course) => course._id === courseId);
+  const [empty, kanbas, _, id, screen] = pathname.split("/");
+  const course = courses.find((course) => course._id === courseId);
   return (
     <div>
       {/* <h1>Course / {course.name} / {screen}</h1> */}

@@ -1,3 +1,22 @@
 .dashboard-container {
     margin-left: 20px; 
 }
+
+.add {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+}
+  
+.list-group-item .input-button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.button-group .btn {
+    margin-left: 5px;
+}
+

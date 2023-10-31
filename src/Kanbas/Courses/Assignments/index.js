@@ -5,14 +5,22 @@ import {AiOutlinePlus} from "react-icons/ai";
 import { FaEllipsisV, FaCheckCircle, FaPlus} from 'react-icons/fa';
 import {PiNotePencilFill} from "react-icons/pi";
 import "./index.css";
+import {addAssignment, deleteAssignment,updateAssignment,selectAssignment,
+  setAssignment} from "./assignmentsReducer";
+import { useSelector, useDispatch } from "react-redux";
 
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignments = db.assignments;
+  //const assignments = db.assignments;
+  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  const dispatch = useDispatch();
+
   const courseAssignments = assignments.filter(
     (assignment) => assignment.course === courseId);
-  return (
+  
+    return (
     <div>
       <div className="d-flex align-items-center justify-content-between">
         <input
@@ -20,12 +28,15 @@ function Assignments() {
                 type="text"
                 placeholder="Search for Assignment"
                 aria-label="Search for Assignment"
+                onChange={(e) => dispatch(selectAssignment({name: e.target.value }))}
         />
         <div className="d-flex">
           <button type="button" className="btn btn-light btn-sm me-2">
           <AiOutlinePlus /> Group
           </button>
-          <button type="button" className="btn btn-danger btn-sm me-2">
+          <button type="button" className="btn btn-danger btn-sm me-2"
+            onClick={() => dispatch(addAssignment({ ...addAssignment, assignment: courseId }))}
+          >
             <AiOutlinePlus /> Assignments
           </button>
           <button type="button" className="btn btn-light btn-sm">
@@ -33,23 +44,6 @@ function Assignments() {
           </button>
         </div>
       </div>  
-      {/* <input
-        className="place-holder form-control form-control-sm"
-              type="text"
-              placeholder="Search for Assignment"
-              aria-label="Search for Assignment"
-      />
-      <div className="d-flex justify-content-end">
-        <button type="button" className="btn btn-light btn-sm me-2">
-        <AiOutlinePlus /> Group
-        </button>
-        <button type="button" className="btn btn-danger btn-sm me-2">
-          <AiOutlinePlus /> Assignments
-        </button>
-        <button type="button" className="btn btn-light btn-sm">
-          <FaEllipsisV />
-        </button>
-      </div> */}
       <hr  />
       <ul  className="list-group">
         <li className="list-group-item d-flex align-items-center assignment-title">
