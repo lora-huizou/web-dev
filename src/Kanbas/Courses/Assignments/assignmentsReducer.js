@@ -3,15 +3,21 @@ import db from "../../Database";
 
 const initialState = {
     assignments: db.assignments,
-    assignment: { name: "New Assignment 123", description: "New Description" },
+    assignment: { _id: "", title: "", course: "", description: "", due: "", startDate: "", endDate: "" },
 };
 
 const assignmentsSlice = createSlice({
     name: "assignments",
     initialState,
     reducers: {
+        // addAssignment: (state, action) => {
+        //     const newAssignment = { ...action.payload, _id: `A${state.assignments.length + 1}` };
+        //     state.assignments.push(newAssignment);
+        //     //db.assignments.push(newAssignment);
+        // },
+
         addAssignment: (state, action) => {
-            state.assignments = [{ ...action.payload, _id: new Date().getTime().toString() },
+            state.assignments = [{ ...action.payload, _id: `A${state.assignments.length + 1}`},
                 ...state.assignments];
         },
 
@@ -21,13 +27,16 @@ const assignmentsSlice = createSlice({
         },
 
         updateAssignment: (state, action) => {
-            state.assignment = state.assignments.map((assignment) => {
-                if (assignment._id === action.payload._id) {
-                    return action.payload;
-                } else {
-                    return assignment;
-                }
-            });
+            const index = state.assignments.findIndex(
+              assignment => assignment._id === action.payload._id
+            );
+      
+            if (index > -1) {
+                console.log("Before updateAssignment:", state.assignments[index]);
+              state.assignments[index] = { ...state.assignments[index], ...action.payload };
+              console.log("After updateAssignment:", state.assignments[index]);
+            }
+            
         },
 
         selectAssignment: (state, action) => {
@@ -37,10 +46,17 @@ const assignmentsSlice = createSlice({
             }
         },
 
+        //setAssignment: (state, action) => {state.assignment = {...state.assignment, ...action.payload};}
         setAssignment: (state, action) => {state.assignment = action.payload;},
     },
 });
 
-export const { addAssignment, deleteAssignment,updateAssignment,selectAssignment,
-    setAssignment} = assignmentsSlice.actions;
+export const {
+    addAssignment,
+    deleteAssignment,
+    updateAssignment,
+    selectAssignment,
+    setAssignment,
+} = assignmentsSlice.actions;
+    
 export default assignmentsSlice.reducer;
