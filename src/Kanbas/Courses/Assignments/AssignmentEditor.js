@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React, {useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import "./index.css";
 import { addAssignment, updateAssignment, setAssignment} from "./assignmentsReducer";
@@ -11,35 +11,45 @@ function AssignmentEditor() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [createMode, setCreateMode] = useState(false);
+  
   useEffect(() => {
-    // edit mode
     console.log("Inside useEffect, assignmentId:", assignmentId);
-    if (assignmentId && assignmentId !== "Create") {
+    if (assignmentId) {
       const assignmentToEdit = assignments.find(assignment => assignment._id === assignmentId);
       if (assignmentToEdit) {
+        // edit mode
         dispatch(setAssignment(assignmentToEdit));
       } else {
-        // create mode
-        const newAssignment = {
-          _id: "",
-          title: "",
-          course: courseId,
-          description: "",
-          due: "",
-          startDate: "",
-          endDate: ""};
-        dispatch(setAssignment(newAssignment));
+        console.error(`Assignment with ID ${assignmentId} not found.`);
       }
+    } else {
+      // create mode
+      console.log("Inside create mode");
+      setCreateMode(true); 
+      const newAssignment = {
+        _id: "",
+        title: "",
+        course: courseId,
+        description: "",
+        due: "",
+        startDate: "",
+        endDate: ""};
+      dispatch(setAssignment(newAssignment));
     }
   }, [assignmentId, dispatch, assignments, courseId]);
   
   const handleSave = () => {
-    if (assignmentId === "Create") {
+    console.log("assignmentId:", assignmentId);
+    console.log("assignment:", assignment);
+    if (createMode) {
       // Generate new ID and add to database
       dispatch(addAssignment(assignment));
+      console.log("After dispatching addAssignment-create",assignmentId );
     } else {
       // Update the assignment in database
       dispatch(updateAssignment(assignment));
+      console.log("After dispatching addAssignment - update",assignmentId );
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };

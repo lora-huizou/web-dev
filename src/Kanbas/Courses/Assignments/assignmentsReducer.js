@@ -17,8 +17,10 @@ const assignmentsSlice = createSlice({
         // },
 
         addAssignment: (state, action) => {
+            console.log("Before adding assignment:", state.assignments);
             state.assignments = [{ ...action.payload, _id: `A${state.assignments.length + 1}`},
                 ...state.assignments];
+            console.log("After adding assignment:", state.assignments);
         },
 
         deleteAssignment: (state, action) => {
