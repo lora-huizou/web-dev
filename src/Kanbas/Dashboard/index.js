@@ -1,10 +1,10 @@
 import { React, useState } from "react";
-import db from "../Database";
+//import db from "../Database";
 import { Link } from "react-router-dom";
 import "./index.css";
 
 function Dashboard(
-  {courses, course, setCourse, addNewCourse,
+  {courses, course, setCourse, addCourse,
   deleteCourse, updateCourse}
 ) {
   return (
@@ -41,10 +41,10 @@ function Dashboard(
               onChange={(e) => setCourse({ ...course, endDate: e.target.value })
             }/>
 
-            <button className="btn btn-success" onClick={addNewCourse} >
+            <button className="btn btn-success" onClick={() => addCourse()} >
               Add
             </button>
-            <button className="btn btn-primary" onClick={updateCourse} >
+            <button className="btn btn-primary" onClick={() => updateCourse(course)} >
               Update
             </button>
         </div>
@@ -65,9 +65,9 @@ function Dashboard(
                   {course.name}
                 </Link>
                 <p className="card-text">
-                  Course Number: {course.number} <br />
-                  Start Date: {course.startDate} <br />
-                  End Date: {course.endDate}
+                  Course Number: {course.number || 'N/A'} <br />
+                  Start Date: {course.startDate || 'N/A'} <br />
+                  End Date: {course.endDate || 'N/A'}
                 </p>
                 <button className="button-group btn btn-success" 
                         onClick={(event) => {event.preventDefault(); setCourse(course);}}>

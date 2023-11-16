@@ -3,36 +3,71 @@ import KanbasNavigation from "./KanbasNavigation/ index";
 import Courses from "./Courses";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
-import db from "./Database";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
+import axios from "axios";
 
 function Kanbas() {
-  const [courses, setCourses] = useState(db.courses);
+  const [courses, setCourses] = useState([]);
+  const URL = "http://localhost:4000/api/courses";
+
   const [course, setCourse] = useState({
-    name: "New Course", 
+    name: "New Course",
     number: "New Number",
-    startDate: "2023-09-10", 
+    startDate: "2023-09-10",
     endDate: "2023-12-15",
   });
-  const addNewCourse = () => {
-    setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
+
+  const findAllCourses = async () => {
+    const response = await axios.get(URL);
+    setCourses(response.data);
   };
-  const deleteCourse = (courseId) => {
-    setCourses(courses.filter((course) => course._id !== courseId));
+
+  useEffect(() => {
+    findAllCourses();
+  }, []);
+
+  // const addNewCourse = () => {
+  //   setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
+  // };
+
+  const addCourse = async () => {
+    const response = await axios.post(URL, course);
+    setCourses([response.data, ...courses]);
+    setCourse({ name: "" });
   };
-  const updateCourse = () => {
-    setCourses(
-      courses.map((c) => {
-        if (c._id === course._id) {
-          return course;
-        } else {
-          return c;
-        }
-      })
-    );
+
+  // const deleteCourse = (courseId) => {
+  //   setCourses(courses.filter((course) => course._id !== courseId));
+  // };
+
+  const deleteCourse = async (course_Id) => {
+    const response = await axios.delete(`${URL}/${course_Id}`);
+    setCourses(courses.filter((c) => c._id !== course_Id));
   };
+
+  // const updateCourse = () => {
+  //   setCourses(
+  //     courses.map((c) => {
+  //       if (c._id === course._id) {
+  //         return course;
+  //       } else {
+  //         return c;
+  //       }
+  //     })
+  //   );
+  // };
+
+  const updateCourse = async () => {
+    try {
+      const response = await axios.put(`${URL}/${course._id}`, course);
+      setCourses(courses.map((c) => (c._id === course._id ? course : c)));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   return (
     <Provider store={store}>
@@ -42,26 +77,36 @@ function Kanbas() {
           <Routes>
             <Route path="/" element={<Navigate to="Dashboard" />} />
             <Route path="Account" element={<Account />} />
-            <Route path="Dashboard" element={
-              <Dashboard
-                courses={courses}
-                course={course}
-                setCourse={setCourse}
-                addNewCourse={addNewCourse}
-                deleteCourse={deleteCourse}
-                updateCourse={updateCourse}/>
-            } />
-            <Route path="Courses/" element={
-              <Dashboard
-              courses={courses}
-              course={course}
-              setCourse={setCourse}
-              addNewCourse={addNewCourse}
-              deleteCourse={deleteCourse}
-              updateCourse={updateCourse}/>
-            } />
-            <Route path="Courses/:courseId/*" element={
-              <Courses courses={courses} />} />
+            <Route
+              path="Dashboard"
+              element={
+                <Dashboard
+                  courses={courses}
+                  course={course}
+                  setCourse={setCourse}
+                  addCourse={addCourse}
+                  deleteCourse={deleteCourse}
+                  updateCourse={updateCourse}
+                />
+              }
+            />
+            <Route
+              path="Courses/"
+              element={
+                <Dashboard
+                  courses={courses}
+                  course={course}
+                  setCourse={setCourse}
+                  addNewCourse={addCourse}
+                  deleteCourse={deleteCourse}
+                  updateCourse={updateCourse}
+                />
+              }
+            />
+            <Route
+              path="Courses/:courseId/*"
+              element={<Courses courses={courses} />}
+            />
             <Route path="Calendar" element={<h1>Calendar</h1>} />
             <Route path="Inbox" element={<h1>Inbox</h1>} />
             <Route path="History" element={<h1>History</h1>} />
