@@ -16,10 +16,11 @@ function WorkingWithArrays() {
   const [todos, setTodos] = useState([]);
 
   const fetchTodos = async () => {
-    const response = await axios.get(API);
+    const response = await axios.get(API, todo);
     setTodos(response.data);
   };
-
+  
+  
   const removeTodo = async (todo) => {
     const response = await axios.get(`${API}/${todo.id}/delete`);
     setTodos(response.data);
@@ -35,9 +36,18 @@ function WorkingWithArrays() {
     setTodo(response.data);
   };
 
-  const updateTitle = async () => {
-    const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
-    setTodos(response.data);
+  // const updateTitle = async () => {
+  //   const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
+  //   setTodos(response.data);
+  // };
+
+  const updateTitle = async (id, newTitle) => {
+    try {
+      const response = await axios.put(`${API}/${todo.id}`, { title: newTitle });
+      setTodos(todos.map((todo) => (todo.id === id ? { ...todo, title: newTitle } : todo)));
+    } catch (error) {
+      setErrorMessage(error.response.data.message);
+    }
   };
 
   const postTodo = async () => {
@@ -55,13 +65,21 @@ function WorkingWithArrays() {
     }
   };
 
-  const updateTodo = async () => {
-    const response = await axios.put(`${API}/${todo.id}`, todo);
+  // const updateTodo = async () => {
+  //   try {
+  //     const response = await axios.put(`${API}/${todo.id}`, todo);
+  //     setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
+  //     setTodo({});
+  //   } catch (error) {
+  //     console.log(error);
+  //     setErrorMessage(error.response.data.message);
+  //   }
+  // };
+  const updateTodo = async (id, updatedData) => {
     try {
-      setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
-      setTodo({});
+      await axios.put(`${API}/${todo.id}`, updatedData);
+      setTodos(todos.map((t) => (t.id === id ? { ...t, ...updatedData } : t)));
     } catch (error) {
-      console.log(error);
       setErrorMessage(error.response.data.message);
     }
   };
@@ -73,7 +91,6 @@ function WorkingWithArrays() {
   return (
     <div>
       <h3>Working with Arrays</h3>
-
       <h4>Retrieving Arrays</h4>
       <a href={API} className="btn btn-primary me-2">
         Get Todos
@@ -125,21 +142,7 @@ function WorkingWithArrays() {
       >
         Update Title to {todo.title}
       </a>
-
-      <h3>Updating description by ID</h3>
-      <input
-        value={todo.description}
-        onChange={(e) => setTodo({ ...todo, description: e.target.value })}
-        className="form-control mb-2"
-        type="text"
-      />
-      <a
-        href={`${API}/${todo.id}/description/${todo.description}`}
-        className="btn btn-primary me-2"
-      >
-        Add Description
-      </a>
-
+      {/* 3.3.7 Extra Credit */}
       <h3>Updating completed status by ID</h3>
       <div className="form-check mb-2">
         <input
@@ -159,10 +162,24 @@ function WorkingWithArrays() {
       >
         Update Completed Status
       </a>
+      <h3>Updating description by ID</h3>
+      <input
+        value={todo.description}
+        onChange={(e) => setTodo({ ...todo, description: e.target.value })}
+        className="form-control mb-2"
+        type="text"
+      />
+      <a
+        href={`${API}/${todo.id}/description/${todo.description}`}
+        className="btn btn-primary me-2"
+      >
+        Add Description
+      </a>
       <br />
       <br />
 
-      <h3>Fetching Arrays</h3>
+      <h3>3.4.5 Fetching Arrays</h3>
+
       {errorMessage && (
         <div className="alert alert-danger mb-2 mt-2">
           {errorMessage}
@@ -178,7 +195,7 @@ function WorkingWithArrays() {
       />
       <input
         value={todo.title}
-        onChange={(e) => setTodo({ ...todo, id: e.target.value })}
+        onChange={(e) => setTodo({ ...todo, title: e.target.value })}
         className="form-control mb-2"
         type="text"
       />
@@ -209,7 +226,7 @@ function WorkingWithArrays() {
       <button onClick={createTodo} className="btn btn-primary mb-2 w-100">
         Create Todo
       </button>
-      <button onClick={updateTitle} className="btn btn-success mb-2 w-100">
+      <button onClick={() => updateTitle(todo.id, todo.title)} className="btn btn-success mb-2 w-100">
         Update Title
       </button>
       <button onClick={updateTodo} className="btn btn-success mb-2 w-100">
@@ -227,12 +244,6 @@ function WorkingWithArrays() {
             >
               Edit
             </button>
-            {/* <button
-              className="btn btn-danger float-end"
-              onClick={() => removeTodo(todo.id)}
-            >
-              Delete
-            </button> */}
             <button
               className="btn btn-danger float-end ms-2"
               onClick={() => deleteTodo(todo)}
@@ -241,8 +252,8 @@ function WorkingWithArrays() {
             </button>
             <input checked={todo.completed} type="checkbox" />
             {todo.title}
-            <hr />
-            {todo.id}
+            {/* <hr /> */}
+            {/* {todo.id} */}
             <p>{todo.description}</p>
             <p>{todo.due}</p>
           </li>

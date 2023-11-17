@@ -11,7 +11,7 @@ function WorkingWithObjects() {
     score: 0,
   });
   const URL = "http://localhost:4000/a5/assignment";
-  
+
   const fetchAssignment = async () => {
     const response = await axios.get(`${URL}`);
     setAssignment(response.data);
@@ -51,6 +51,7 @@ function WorkingWithObjects() {
         Fetch Assignment
       </button>
 
+      {/* Extra Credit : modify score and assignment */}
       <a
         href={`${URL}/score/${assignment.score}`}
         className="btn btn-primary me-2 float-end"
@@ -65,19 +66,29 @@ function WorkingWithObjects() {
         className="form-control mb-2 w-75"
         type="text"
       />
-      <a
-        href={`${URL}/completed/${assignment.completed}`}
-        className="btn btn-primary me-2 "
-      >
-        Completed Status
-      </a>
-      <input
-        onChange={(e) =>
-          setAssignment({ ...assignment, completed: e.target.checked })
-        }
-        checked={assignment.completed}
-        type="checkbox"
-      />
+  
+      <div class="d-flex align-items-center mb-2">
+        <div class="form-check">
+          <input
+            id="completedCheck"
+            onChange={(e) =>
+              setAssignment({ ...assignment, completed: e.target.checked })
+            }
+            checked={assignment.completed}
+            type="checkbox"
+            class="form-check-input"
+          />
+          <label class="form-check-label ms-2" htmlFor="completedCheck">
+            Completed Status
+          </label>
+        </div>
+        <a
+          href={`${URL}/completed/${assignment.completed}`}
+          className="btn btn-primary ms-3"
+        >
+          Update Completed Status
+        </a>
+      </div>
 
       <h4>Retrieving Objects</h4>
       <a
