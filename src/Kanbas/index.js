@@ -47,18 +47,6 @@ function Kanbas() {
     setCourses(courses.filter((c) => c._id !== course_Id));
   };
 
-  // const updateCourse = () => {
-  //   setCourses(
-  //     courses.map((c) => {
-  //       if (c._id === course._id) {
-  //         return course;
-  //       } else {
-  //         return c;
-  //       }
-  //     })
-  //   );
-  // };
-
   const updateCourse = async () => {
     try {
       const response = await axios.put(`${URL}/${course._id}`, course);
@@ -67,7 +55,6 @@ function Kanbas() {
       console.log(error);
     }
   };
-
 
   return (
     <Provider store={store}>

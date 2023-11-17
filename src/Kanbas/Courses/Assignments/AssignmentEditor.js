@@ -3,6 +3,7 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 import "./index.css";
 import { addAssignment, updateAssignment, setAssignment} from "./assignmentsReducer";
 import { useSelector, useDispatch } from "react-redux";
+import * as client from "./client";
 
 function AssignmentEditor() {
   const { assignmentId, courseId} = useParams();
@@ -39,17 +40,28 @@ function AssignmentEditor() {
     }
   }, [assignmentId, dispatch, assignments, courseId]);
   
-  const handleSave = () => {
+  const handleSave = async () => {
     console.log("assignmentId:", assignmentId);
     console.log("assignment:", assignment);
     if (createMode) {
       // Generate new ID and add to database
-      dispatch(addAssignment(assignment));
-      console.log("After dispatching addAssignment-create",assignmentId );
+      try{
+        const newAssignment = await client.createAssignment(courseId, assignment);
+        dispatch(addAssignment(assignment));
+        console.log("After dispatching addAssignment-create",assignmentId );
+      } catch (error) {
+        console.log("Error creating assignment:", error);
+      }
     } else {
       // Update the assignment in database
-      dispatch(updateAssignment(assignment));
-      console.log("After dispatching addAssignment - update",assignmentId );
+      try{
+        const updatedAssignment = await client.updateAssignment(assignment);
+        dispatch(updateAssignment(assignment));
+        console.log("After dispatching addAssignment - update",assignmentId );
+      } catch (error) {
+        console.log("Error updating assignment:", error);
+      }
+      
     }
     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
   };

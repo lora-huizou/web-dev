@@ -1,7 +1,5 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import { useParams, Routes, Route, Navigate, useLocation,Link } from "react-router-dom";
-import JsonPre from "../../Labs/a3/JsonPre";
-import db from "../Database";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
@@ -11,12 +9,24 @@ import Grades from "./Grades";
 import {FaBars} from "react-icons/fa";
 import {FaGlasses} from "react-icons/fa"; 
 import "./index.css";
+import axios from "axios";
 
-function Courses({courses}) {
+function Courses() {
   const { courseId } = useParams();
   const {pathname} = useLocation();
   const [empty, kanbas, _, id, screen] = pathname.split("/");
-  const course = courses.find((course) => course._id === courseId);
+  //const course = courses.find((course) => course._id === courseId);
+  const [course, setCourse] = useState({});
+  
+  const fetchCourse = async () => {
+    const response = await axios.get(`http://localhost:4000/api/courses/${courseId}`);
+    setCourse(response.data);
+  };
+
+  useEffect(() => {
+    fetchCourse();
+  }, []);
+
   return (
     <div>
       {/* <h1>Course / {course.name} / {screen}</h1> */}
