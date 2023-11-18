@@ -28,10 +28,6 @@ function Kanbas() {
     findAllCourses();
   }, []);
 
-  // const addNewCourse = () => {
-  //   setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
-  // };
-
   const addCourse = async () => {
     const response = await axios.post(URL, course);
     setCourses([response.data, ...courses]);
