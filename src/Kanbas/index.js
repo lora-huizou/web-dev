@@ -10,7 +10,8 @@ import axios from "axios";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
-  const URL = "http://localhost:4000/api/courses";
+  //const URL = "http://localhost:4000/api/courses";
+  const URL = process.env.REACT_APP_API_BASE + "/courses";
 
   const [course, setCourse] = useState({
     name: "New Course",
