@@ -12,6 +12,10 @@ import "./index.css";
 import axios from "axios";
 
 function Courses() {
+
+  const API_BASE = process.env.REACT_APP_API_BASE; 
+  const COURSES_URL = `${API_BASE}/courses`;
+
   const { courseId } = useParams();
   const {pathname} = useLocation();
   const [empty, kanbas, _, id, screen] = pathname.split("/");
@@ -19,7 +23,7 @@ function Courses() {
   const [course, setCourse] = useState({});
   
   const fetchCourse = async () => {
-    const response = await axios.get(`http://localhost:4000/api/courses/${courseId}`);
+    const response = await axios.get(`${COURSES_URL}/${courseId}`);
     setCourse(response.data);
   };
 
