@@ -19,6 +19,9 @@ function Project() {
             <Link to="/project/" className="list-group-item">
               Home
             </Link>
+            <Link to="/project/search" className="list-group-item">
+              Search
+            </Link>
             <Link to="/project/signin" className="list-group-item">
               Signin
             </Link>
@@ -28,10 +31,7 @@ function Project() {
             <Link to="/project/account" className="list-group-item">
               Account
             </Link>
-            <Link to="/project/search" className="list-group-item">
-              Search
-            </Link>
-            <Link to="/project/users" className="list-group-item">
+            {/* <Link to="/project/users" className="list-group-item">
               Users
             </Link>
             <Link to="/project/details" className="list-group-item">
@@ -39,10 +39,10 @@ function Project() {
             </Link>
             <Link to="/project/table" className="list-group-item">
               All Users
-            </Link>
+            </Link> */}
           </div>
         </div>
-        <div className="col-7">
+        <div className="col-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
