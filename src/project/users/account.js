@@ -39,6 +39,20 @@ function Account() {
     navigate("/project/signin");
   };
 
+  const dateFormat = (isoString) => {
+    if (!isoString) {
+      return "2000-01-01";
+    }
+    const date = new Date(isoString);
+    let year = date.getFullYear().toString();
+    let month = String(date.getMonth() + 1).padStart(2, "0").toString();
+    let day = String(date.getDate()).padStart(2, "0").toString();
+    while (year.length < 4) {year = "0" + year;}
+    while (month.length < 2) {month = "0" + month;}
+    while (day.length < 2) {day = "0" + day;}
+    return `${year}-${month}-${day}`;
+  };
+
   useEffect(() => {
     if (id) {
       findUserById(id);
@@ -94,7 +108,8 @@ function Account() {
             <input
               className="form-control"
               type="date"
-              value={account.dob}
+              placeholder="DOB"
+              value={dateFormat(account.dob)}
               onChange={(e) => setAccount({ ...account, dob: e.target.value })}
             />
           </div>
@@ -131,7 +146,7 @@ function Account() {
               Users
             </Link>
           </div>
-          <div> 
+          <div>
             <button onClick={signout} className="btn btn-danger w-100">
               Signout
             </button>
