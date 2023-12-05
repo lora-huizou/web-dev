@@ -8,18 +8,33 @@ function Account() {
   const [account, setAccount] = useState(null);
   const navigate = useNavigate();
 
-  const fetchAccount = async () => {
-    try {
-      const account = await client.account();
-      setAccount(account);
-    } catch (error) {
-      navigate("/project/signin");
-    }
-  };
+  // const fetchAccount = async () => {
+  //   try {
+  //     const account = await client.account();
+  //     setAccount(account);
+  //   } catch (error) {
+  //     navigate("/project/signin");
+  //   }
+  // };
   // const fetchAccount = async () => {
   //   const account = await client.account();
   //   setAccount(account);
   //   };
+  
+  const fetchAccount = async (id) => {
+    try {
+      if (id) {
+        const account = await client.findUserById(id);
+        setAccount(account);
+      } else {
+        const account = await client.account();
+        console.log(account);
+        setAccount(account);
+      }
+    } catch (err) {
+      navigate("/project/signin");
+    }
+  };
 
   const save = async () => {
     await client.updateUser(account);
@@ -54,12 +69,15 @@ function Account() {
   };
 
   useEffect(() => {
-    if (id) {
-      findUserById(id);
-    } else {
-      fetchAccount();
-    }
+    fetchAccount(id);
   }, []);
+  // useEffect(() => {
+  //   if (id) {
+  //     findUserById(id);
+  //   } else {
+  //     fetchAccount();
+  //   }
+  // }, []);
 
   return (
     <div className="account-container">
